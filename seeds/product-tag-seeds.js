@@ -36,11 +36,11 @@ const productTagData =[
     },
     {
         product_id:9,
-        tag_id:2,
+        tag_id:1,
     },
     {
         product_id:10,
-        tag_id:2,
+        tag_id:1,
     },
     {
         product_id:11,
@@ -72,11 +72,11 @@ const productTagData =[
     },
     {
         product_id:18,
-        tag_id:2,
+        tag_id:1,
     },
     {
         product_id:19,
-        tag_id:2,
+        tag_id:1,
     },
     {
         product_id:20,

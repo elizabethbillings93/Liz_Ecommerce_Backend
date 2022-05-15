@@ -47,6 +47,10 @@ const productTagData =[
         tag_id:2,
     },
     {
+        product_id:12,
+        tag_id:1,
+    },
+    {
         product_id:13,
         tag_id:1,
     },
@@ -78,10 +82,7 @@ const productTagData =[
         product_id:20,
         tag_id:2,
     },
-    {
-        product_id:1,
-        tag_id:2,
-    },
+   
     
 ];
 const seedProductTags =() => ProductTag.bulkCreate(productTagData);

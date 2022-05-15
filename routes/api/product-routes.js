@@ -1,45 +1,33 @@
 const router = require('express').Router();
+// create object from all seed data
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// The `/api/products` endpoint
-
-// get all products
+// Get request for all products
 router.get('/', (req, res) => {
   Product.findAll({
-    include: [
-      Category,
-      {
+    include: [Category,{
         model: Tag,
         through: ProductTag,
       },
     ],
   })
-    .then((products) => res.json(products))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    .then((data)=> res.json(data));
 });
 
-// get one product
+// Get request for one product by id
 router.get('/:id', (req, res) => {
   Product.findOne({
     where: {
       id: req.params.id,
     },
-    include: [
-      Category,
+    include: [Category,
       {
         model: Tag,
         through: ProductTag,
       },
     ],
   })
-    .then((products) => res.json(products))
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    });
+    .then((data)=> res.json(data));
 });
 
 // creat new product
